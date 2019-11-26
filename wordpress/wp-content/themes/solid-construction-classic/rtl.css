@@ -1,0 +1,484 @@
+/*
+Theme Name: Solid Construction Classic
+
+Adding support for languages written in a Right To Left (RTL) direction is easy -
+it's just a matter of overwriting all the horizontal positioning attributes
+of your CSS stylesheet in a separate stylesheet file named rtl.css.
+
+https://codex.wordpress.org/Right-to-Left_Language_Support
+
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+# Normalize
+# Layouts
+# Media Queries
+	## >= 531px (iPhone 6, 6S, 7 and 8 : Landscape)
+	## >= 1024px (iPad 1, 2, 3, 4, Mini, Air, Pro 9.7" : Landscape)
+	## >= 1200px (Kindle Fire HD 8.9", Non-Retina Screens & Retina Screens : Portrait)
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Normalize
+--------------------------------------------------------------*/
+
+body {
+	direction: rtl;
+	overflow-x: hidden;
+	unicode-bidi: embed;
+}
+
+/*--------------------------------------------------------------
+# Layouts
+--------------------------------------------------------------*/
+
+.site-branding {
+	margin-right: 0;
+	padding-right: 0;
+	margin-left: auto;
+}
+
+.main-navigation .dropdown-toggle {
+	left: 19px;
+	right: inherit;
+}
+
+.navigation-classic .search-content-wrapper-top {
+	text-align: left;
+}
+
+.main-navigation ul ul a {
+	padding-left: 25px;
+	padding-right: 40px;
+}
+
+.main-navigation .menu-item-has-children > a,
+.main-navigation .page_item_has_children > a {
+	padding-left: 42px;
+	padding-right: 25px;
+}
+
+.main-navigation .menu-item-has-children .menu-item-has-children > a,
+.main-navigation .page_item_has_children .page_item_has_children > a {
+	padding-right: 40px;
+}
+
+.main-navigation ul ul ul a {
+	padding-left: 25px;
+	padding-right: 60px;
+}
+
+.menu-inside-wrapper .menu-social-container {
+	padding-left: 0;
+	padding-right: 16px;
+}
+
+#search-container {
+	clear: both;
+}
+
+#search-container input,
+.widget input[type="search"] {
+	padding: 8px 14px 8px 60px;
+}
+
+#search-container button,
+.widget .search-submit {
+	left: 0;
+	right: inherit;
+}
+
+.main-navigation ul ul li::before {
+	left: inherit;
+	right: 0;
+	transform: rotate(180deg);
+}
+
+.menu-content-wrapper .entry-price {
+	text-align: left;
+}
+
+th {
+	text-align: right;
+}
+
+ul,
+ol {
+    margin: 0 1.25em 1.75em 0;
+    padding: 0;
+}
+
+.comment-metadata a {
+    margin-left: 21px;
+    margin-right: 0;
+}
+
+.tags-links a,
+.cat-links a {
+    margin-left: 7px;
+    margin-right: 0;
+}
+
+.entry-header .entry-meta > span {
+	margin-left: 21px;
+	margin-right: 0;
+}
+
+.events-section .hentry .posted-on {
+	left: inherit;
+	margin-left: 0;
+	right: 21px;
+}
+
+.entry-footer .cat-links:before,
+.entry-footer .tags-links:before,
+.edit-link:before {
+	float: right;
+	margin-left: 14px;
+	margin-right: 0;
+}
+
+.comment-author .avatar {
+    float: right;
+    margin-left: 28px;
+    margin-right: 0;
+}
+
+.comment-content::before {
+    right: 16px;
+}
+
+.main-navigation .menu-toggle .fa {
+	margin-left: 3px;
+	margin-right: 0;
+}
+
+.widget_categories ul,
+.widget_archive ul,
+.ew-archive ul,
+.ew-category ul {
+	text-align: left;
+}
+
+.widget_categories ul li a,
+.widget_archive ul li a,
+.ew-archive ul li a,
+.ew-category ul li a {
+	float: right;
+}
+
+.main-navigation .search-content-wrapper-top .menu-toggle .fa {
+	margin-left: 0;
+}
+
+#scrollup {
+    left: 21px;
+    right: inherit;
+}
+
+.entry-breadcrumbs a {
+	margin-left: 21px;
+	margin-right: 0;
+}
+
+.entry-breadcrumbs a::after {
+	left: -14px;
+	right: inherit;
+}
+
+.entry-breadcrumbs a::after,
+.author-link::after {
+	transform: rotate(90deg);
+}
+
+.header-top-left-content li .fa,
+.contact-details li .fa {
+    margin-left: 14px;
+    margin-right: 0;
+}
+
+.slider-content-wrapper .content-right {
+	text-align: left;
+}
+
+.why-choose-us-content-area .post-thumbnail,
+.stats-section .post-thumbnail {
+    float: right;
+    margin-left: 28px;
+    margin-right: 0;
+}
+
+.posted-at,
+.cat-in,
+.fa-comment,
+.author-label {
+    padding-left: 4px;
+    padding-right: 0;
+}
+
+blockquote::before {
+	float: right;
+}
+
+.page-links > .page-links-title {
+    margin: 0 0 0 14px;
+}
+
+.comment-metadata > a::before {
+    margin-left: 4px;
+    margin-right: 0;
+}
+
+#cancel-comment-reply-link {
+	left: 0;
+	right: inherit;
+}
+
+#cancel-comment-reply-link::before {
+	right: -13px;
+}
+
+.quote-button .fa,
+#wp-comment-cookies-consent {
+	margin-left: 7px;
+	margin-right: 0;
+}
+
+.site-primary-menu .menu-social-container {
+	padding-left: 0;
+	padding-right: 18px;
+}
+
+/*--------------------------------------------------------------
+# Media Queries
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+## >= 531px
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 33.1875em) {
+	.author-description {
+		padding-left: 0;
+		padding-right: 35px;
+		text-align: right;
+	}
+
+	.comment-navigation .nav-previous,
+	.posts-navigation .nav-previous,
+	.post-navigation .nav-previous {
+		float: right;
+	}
+
+	.post-navigation .nav-previous {
+		text-align: right;
+	}
+
+	.post-navigation .nav-next {
+		padding-left: 0;
+		padding-right: 21px;
+	}
+
+	.post-navigation .nav-previous {
+		padding-left: 21px;
+		padding-right: 0;
+	}
+	.post-navigation .nav-next .nav-subtitle::after {
+		margin-left: 0;
+	    margin-right: 7px;
+	}
+
+	.post-navigation .nav-previous .nav-subtitle::before {
+	    margin-left: 7px;
+	    margin-right: 0;
+	}
+
+	.header-top-content.layout-two .header-top-left-content {
+		float: right;
+	}
+
+	.header-top-content.layout-two .header-top-right-content {
+		float: left;
+	}
+
+	.site-contact li:first-child {
+		margin-right: 0;
+	}
+
+	.site-contact li,
+	.quote-button {
+		margin-left: 0;
+	    margin-right: 21px;
+	}
+
+	.hero-content-wrapper .post-thumbnail,
+	.contact-section .post-thumbnail {
+		left: 0;
+		right: auto;
+	}
+
+	.hero-content-wrapper .entry-container,
+	.contact-section .entry-container {
+		float: right;
+	}
+}
+
+/*--------------------------------------------------------------
+## >= 1024px
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 64em) {
+
+	body:not(.navigation-classic) .menu-inside-wrapper,
+	.site-header-main .search-content-wrapper-top #search-container {
+		left: 0;
+		right: inherit;
+	}
+
+	body:not(.navigation-classic) .site-branding {
+		margin-left: auto;
+		margin-right: 0;
+	}
+
+	.navigation-classic .main-navigation #primary-menu .menu-item-has-children > a:after,
+	.navigation-classic .main-navigation #primary-menu .page_item_has_children > a:after {
+		left: 28px;
+		right: inherit;
+	}
+
+	.navigation-classic ul.sub-menu,
+	.navigation-classic .main-navigation .children {
+		text-align: right;
+	}
+
+	.navigation-classic .main-navigation ul ul li:hover > ul,
+	.navigation-classic .main-navigation ul ul li.focus > ul {
+	    left: inherit;
+	    right: 100%;
+	}
+
+	.navigation-classic .main-navigation ul ul .menu-item-has-children > a::after,
+	.navigation-classic .main-navigation ul ul .page_item_has_children > a::after {
+	    transform: rotate(90deg);
+	}
+
+	.navigation-classic .nav-search-wrap .search-content-wrapper-top #search-container {
+		left: 0;
+		right: inherit;
+	}
+
+	.navigation-classic .main-navigation #primary-menu .menu-item-has-children > a,
+	.navigation-classic .main-navigation #primary-menu .page_item_has_children > a {
+		padding-left: 21px;
+		padding-right: 0;
+	}
+
+	.navigation-classic .main-navigation #primary-menu .menu-item-has-children .menu-item-has-children > a,
+	.navigation-classic .main-navigation #primary-menu .page_item_has_children .page_item_has_children > a {
+		padding-right: 24px;
+	}
+
+	.navigation-classic .site-header-main .search-content-wrapper-top #search-container {
+		left: 0;
+		right: inherit;
+	}
+
+	.header-classic .site-header-right .menu-social-container {
+		padding-right: 11px;
+		padding-left: 0;
+	}
+
+	.author-description {
+		padding-right: 49px;
+	}
+
+	.navigation-classic .menu-inside-wrapper .menu-social-container {
+		padding-right: 0;
+	}
+
+	.content-left .content-area {
+	    float: right;
+	    margin-left: -100%;
+	    margin-right: 0;
+	    width: 68.293%;
+	}
+
+	.content-left .sidebar {
+	    float: right;
+	    margin-left: 0;
+	    margin-right: 68.293%;
+	}
+
+	.content-right .sidebar {
+	    float: right;
+	    margin-left: 68.293%;
+	    margin-right: 0;
+	}
+
+	.content-right .content-area {
+	    float: left;
+	    margin-left: 0;
+	    margin-right: -100%;
+	}
+
+	.header-top-left-content li {
+		margin-left: 42px;
+		margin-right: 0;
+	}
+
+	.header-top-left-content li:last-child {
+		margin-left: 0;
+	}
+
+	.why-choose-us-section.has-main-image .main-image {
+		left: auto;
+		right: 0;
+	}
+
+	.why-choose-us-section.has-main-image .why-choose-us-content-area {
+		float: left;
+	}
+
+	.navigation-classic .site-primary-menu.layout-two .main-navigation {
+		margin-left: auto;
+		margin-right: inherit;
+	}
+
+	.navigation-classic .site-primary-menu.layout-two .nav-menu li:first-child a {
+		margin-right: 0;
+		margin-left: 28px;
+	}
+
+	.header-classic .site-branding {
+		margin-right: 0;
+		margin-left: auto;
+	}
+
+	.site-contact li,
+	.quote-button {
+		margin-left: 0;
+		margin-right: 28px;
+	}
+
+	.header-classic .site-branding {
+		text-align: right;
+	}
+
+	.header-classic .custom-logo-link {
+		padding-left: 14px;
+		padding-right: 0;
+	}
+}
+
+/*--------------------------------------------------------------
+## >= 1200px
+--------------------------------------------------------------*/
+
+@media screen and (min-width: 75em) {
+	.hero-content-wrapper .entry-container,
+	.contact-section .entry-container {
+		padding: 105px 65px 105px 105px;
+	}
+}

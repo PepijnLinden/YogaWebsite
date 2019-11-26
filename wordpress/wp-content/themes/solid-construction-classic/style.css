@@ -1,0 +1,39 @@
+/*
+Theme Name: Solid Construction Classic
+Theme URI: https://catchthemes.com/themes/solid-construction-classic/
+Author: Catch Themes
+Author URI: https://catchthemes.com/
+Description: Solid Construction Classic is a child theme of our Construction WordPress theme - Solid Construction. Solid Construction Classic is a simple and clean, robust and reliable, professional and classic WordPress theme that has been constructed in order to flaunt your products and services online. As the name suggests, Solid Construction Classic makes your construction and architectural website bold and solid, giving your website a classic look on all devices regardless of the screen resolution. You can display your website logo, title, and tagline elegantly on the left side of your website. The classic design makes your construction website bold and beautiful. Solid Construction Classic empowers you with the ability todisplay your social icons on the right side of the website gracefully, making it easier for your visitors to find you on social media platforms. Solid Construction Classic helps you add all the crucial assets to your website that would help in the growth of loyal clients. With an array of amazing features integrated into the theme, Solid Construction Classic sure is a perfect fit for construction companies, architectural firms,building companies and freelance architects. The theme is easy-to-use, feature-rich and visually stunning. Showcase your construction and architectural business through your website in a revolutionary way and increase the number of visitors and clients you get every day. To top it all, the theme is translation ready. For more details, check out the Theme Instructions at https://catchthemes.com/themes/solid-construction-classic/#theme-instructions, support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/solid-construction/
+Version: 1.0.1
+License: GNU General Public License v3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
+Text Domain: solid-construction-classic
+Template: solid-construction
+Tags: one-column, two-columns, right-sidebar, flexible-header, custom-background, custom-colors, custom-header, custom-logo, custom-menu, editor-style, featured-images, footer-widgets, microformats, post-formats, sticky-post, theme-options, threaded-comments, translation-ready, blog, news, portfolio
+This theme, like WordPress, is licensed under the GPL.
+Use it to make something cool, have fun, and share what you've learned with others.
+
+Normalizing styles have been helped along thanks to the fine work of
+Nicolas Gallagher and Jonathan Neal http://necolas.github.com/normalize.css/
+*/
+
+/*--------------------------------------------------------------
+>>> TABLE OF CONTENTS:
+----------------------------------------------------------------
+*/
+
+/* Site Header Right Social */
+.header-classic .site-header-right .menu-social-container {
+	padding-left: 0;
+	margin-left: -10px;
+}
+
+.header-classic .site-header-right .menu-social-container ul {
+	margin: 0;
+	padding: 0;
+}
+
+.header-classic .site-header-right .menu-social-container ul li a {
+	display: block;
+	padding: 14px 10px;
+}
