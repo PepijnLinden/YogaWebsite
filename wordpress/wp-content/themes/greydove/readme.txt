@@ -2,7 +2,7 @@
 Requires at least: 5.0
 Tested up to: 5.2
 Requires PHP: 5.6
-Stable tag: 2.0.9
+Stable tag: 2.1.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: one-column, two-columns, right-sidebar, custom-background, custom-header, custom-menu, editor-style, featured-images, flexible-header, sticky-post, threaded-comments, blog
@@ -21,6 +21,9 @@ Grey Dove is a simple and responsive WordPress theme for blogs. Inspired by the 
 4. Navigate to Appearance > Customize in your admin panel and customize to taste.
 
 == Changelog ==
+= 2.1.1 =
+* Fixes the error in navigation menu in small screens
+
 = 2.0 =
 * Complete reworked version of the theme for latest version support
 

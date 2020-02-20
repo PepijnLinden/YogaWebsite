@@ -82,6 +82,7 @@ abstract class Document extends Controls_Stack {
 	 */
 	public static function get_editor_panel_config() {
 		return [
+			'title' => static::get_title(), // JS Container title.
 			'widgets_settings' => [],
 			'elements_categories' => static::get_editor_panel_categories(),
 			'messages' => [
@@ -158,10 +159,12 @@ abstract class Document extends Controls_Stack {
 
 	/**
 	 * @since 2.0.12
-	 * @deprecated 2.4.0
+	 * @deprecated 2.4.0 Use `Document::get_remote_library_config()` instead
 	 * @access public
 	 */
-	public function get_remote_library_type() {}
+	public function get_remote_library_type() {
+		_deprecated_function( __METHOD__, '2.4.0', __CLASS__ . '::get_remote_library_config()' );
+	}
 
 	/**
 	 * @since 2.0.0
@@ -221,10 +224,12 @@ abstract class Document extends Controls_Stack {
 
 	/**
 	 * @since 2.0.6
-	 * @deprecated 2.4.0 Use `Document::get_container_attributes` instead
+	 * @deprecated 2.4.0 Use `Document::get_container_attributes()` instead
 	 * @access public
 	 */
 	public function get_container_classes() {
+		_deprecated_function( __METHOD__, '2.4.0', __CLASS__ . '::get_container_attributes()' );
+
 		return '';
 	}
 
@@ -245,13 +250,6 @@ abstract class Document extends Controls_Stack {
 
 		if ( ! Plugin::$instance->preview->is_preview_mode( $id ) ) {
 			$attributes['data-elementor-settings'] = wp_json_encode( $this->get_frontend_settings() );
-		}
-
-		// TODO: BC since 2.4.0
-		$classes = $this->get_container_classes();
-
-		if ( $classes ) {
-			$attributes['class'] .= ' ' . $classes;
 		}
 
 		return $attributes;
@@ -521,8 +519,12 @@ abstract class Document extends Controls_Stack {
 		 */
 		do_action( 'elementor/document/before_save', $this, $data );
 
-		if ( isset( $data['settings'] ) ) {
-			if ( DB::STATUS_AUTOSAVE === $data['settings']['post_status'] ) {
+		if ( ! current_user_can( 'unfiltered_html' ) ) {
+			$data = wp_kses_post_deep( $data );
+		}
+
+		if ( ! empty( $data['settings'] ) ) {
+			if ( isset( $data['settings']['post_status'] ) && DB::STATUS_AUTOSAVE === $data['settings']['post_status'] ) {
 				if ( ! defined( 'DOING_AUTOSAVE' ) ) {
 					define( 'DOING_AUTOSAVE', true );
 				}
@@ -534,7 +536,8 @@ abstract class Document extends Controls_Stack {
 			$this->post = get_post( $this->post->ID );
 		}
 
-		if ( isset( $data['elements'] ) ) {
+		// Don't check is_empty, because an empty array should be saved.
+		if ( isset( $data['elements'] ) && is_array( $data['elements'] ) ) {
 			$this->save_elements( $data['elements'] );
 		}
 
@@ -543,7 +546,7 @@ abstract class Document extends Controls_Stack {
 		$this->save_version();
 
 		// Remove Post CSS
-		$post_css = new Post_CSS( $this->post->ID );
+		$post_css = Post_CSS::create( $this->post->ID );
 
 		$post_css->delete();
 
@@ -959,10 +962,10 @@ abstract class Document extends Controls_Stack {
 	/**
 	 * @since 2.0.0
 	 * @access public
-	 * @deprecated Use `save_template_type`.
+	 * @deprecated 2.2.0 Use `Document::save_template_type()`.
 	 */
 	public function save_type() {
-		// TODO: _deprecated_function( __METHOD__, '2.2.0', 'save_template_type' );
+		_deprecated_function( __METHOD__, '2.2.0', __CLASS__ . '::save_template_type()' );
 
 		$this->save_template_type();
 	}
@@ -1129,14 +1132,6 @@ abstract class Document extends Controls_Stack {
 			'category' => $this->get_name(),
 			'autoImportSettings' => false,
 		];
-
-		// TODO: BC since 2.4.0
-		$bc_type = $this->get_remote_library_type();
-
-		if ( $bc_type ) {
-			$config['category'] = $bc_type;
-		}
-		// END BC
 
 		return $config;
 	}

@@ -6,12 +6,13 @@ if (isset($_POST['submit-uaf-implement'])){
 		$fontsImplementData = array();
 	endif;
 	
-	$fontElements 	= array();
+    $fontElements 	= array();
 	$fontElements[] = @join(', ',$_POST['elements']);
 	$fontElements[] = @join(', ',array_filter(array_map('trim',explode("\n", trim($_POST['custom_elements'])))));
 	$fontElements 	= array_filter(array_map('trim',$fontElements));
-	$finalElements  = join(', ', $fontElements);
-	
+	$finalElements  = join(', ', $fontElements);	
+    $finalElements  = uaf_langutizse_elements($finalElements);
+
 	if (!empty($finalElements)){
 		$fontsImplementData[date('ymdhis')]	= array(
 											'font_key' 		=> $_POST['font_key'], 
@@ -63,8 +64,9 @@ $fontsData		= json_decode($fontsRawData, true);
 
 <div id="open_assign_font" style="display:none;">
 	<form action="admin.php?page=uaf_settings_page"  id="open_assign_font_form" method="post">
-    	<table class="uaf_form">
-        	<tr>
+    	<table class="uaf_form">        	
+            
+            <tr>
             	<td width="175">Select Font</td>
                 <td>
                 	<select name="font_key" class="required" style="width:200px;">
@@ -78,7 +80,18 @@ $fontsData		= json_decode($fontsRawData, true);
 						?>
                     </select>
                 </td>
-            </tr>	
+            </tr>
+            <?php
+            global $TRP_LANGUAGE;    
+            print_r($TRP_LANGUAGE);    
+
+            $languageSelector = uaf_get_language_selector();
+            if ($languageSelector['enableMultiLang'] == TRUE ): ?>    
+                <tr>
+                    <td width="175">Select Language</td>
+                    <td><?php echo $languageSelector['selectHTML']; ?></td>
+                </tr>
+            <?php endif; ?>
             <tr>    
                 <td valign="top">Select elements to assign</td>
                 <td>
@@ -139,7 +152,7 @@ $fontsImplementData		= json_decode($fontsImplementRawData, true);
 <table cellspacing="0" class="wp-list-table widefat fixed bookmarks">
 	<thead>
     	<tr>
-        	<th  width="20">Sn</th>
+        	<th width="20">Sn</th>
             <th>Font</th>
             <th>Applied To</th>
             <th width="100">Delete</th>
@@ -155,7 +168,7 @@ $fontsImplementData		= json_decode($fontsImplementRawData, true);
 		?>
         <tr>
         	<td><?php echo $sn; ?></td>
-            <td><?php echo $fontsData[$fontImplementData['font_key']]['font_name']; ?></td>
+            <td><?php echo @$fontsData[$fontImplementData['font_key']]['font_name']; ?></td>
             <td><?php echo $fontImplementData['font_elements'] ?></td>
             <td><a onclick="if (!confirm('Are you sure ?')){return false;}" href="admin.php?page=uaf_settings_page&delete_implement_key=<?php echo $key; ?>">Delete</a></td>
         </tr>

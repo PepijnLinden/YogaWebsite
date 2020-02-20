@@ -1,14 +1,12 @@
 === Kids Campus ===
-Contributors: Grace Themes
-Tags: blog, two-columns, right-sidebar, full-width-template, custom-colors, custom-menu, custom-header, custom-logo, featured-images, editor-style, custom-background, threaded-comments, theme-options, translation-ready
-
+Contributors: Gracethemes
+Tags: blog, two-columns, right-sidebar, full-width-template, custom-colors, custom-menu, custom-header, 
+custom-logo, featured-images, editor-style, custom-background, threaded-comments, theme-options,
+ translation-ready
 Requires at least: WordPress 4.8
-Tested up to: WordPress 5.2.2
-Requires PHP:  7.2
-Tested up to: 5.2.2
-Stable tag: 1.0
-
-Version: 1.0
+Requires PHP:  5.2
+Tested up to: 5.3.2
+Stable tag: 1.2
 License: GNU General Public License version 2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
@@ -25,7 +23,12 @@ Kids Campus is a fresh and lively, vibrant and colorful, visually spacious and s
 * Intial version release
 
 = 1.1 =
-i) We have change screenshot (children) as per admin suggestion.
+* We have change screenshot (children) as per admin suggestion.
+
+= 1.2 =
+* added keyboard navigation functions
+* skip content link added
+* Readme file Validated
 
 == Resources ==
 

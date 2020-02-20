@@ -2,8 +2,7 @@
 // DEFAULT WORDPRESS EDITOR
 function uaf_mce_before_init( $init_array ) {
 	$theme_advanced_fonts = '';
-	$fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+	$fontsData		= get_uploaded_font_list();
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):
 			$theme_advanced_fonts .= ucfirst(str_replace('_',' ', $fontData['font_name'])) .'='.$fontData['font_name'].';';		
@@ -20,11 +19,10 @@ function wp_editor_fontsize_filter( $options ) {
 	return $options;
 }
 
-// DIVI CUSTOMIZER AND BUILDER
+// DIVI CUSTOMIZER AND BUILDER (Tested with 4.0.9 and 4.0.9)
 add_filter('et_websafe_fonts', 'uaf_send_fonts_divi_list',10,2);
 function uaf_send_fonts_divi_list($fonts){
-    $fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+    $fontsData		= get_uploaded_font_list();
 	$fonts_uaf		= array();
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):
@@ -41,8 +39,7 @@ function uaf_send_fonts_divi_list($fonts){
 // SITE ORIGIN BUILDER
 add_filter('siteorigin_widgets_font_families', 'uaf_send_fonts_siteorigin_list',10,2);
 function uaf_send_fonts_siteorigin_list($fonts){
-    $fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+    $fontsData		= get_uploaded_font_list();
 	$fonts_uaf		= array();
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):
@@ -59,8 +56,7 @@ if (class_exists( 'Redux' ) ) {
 }
 
 function uaf_send_fonts_redux_list( $custom_fonts ) {
-	$fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+	$fontsData		= get_uploaded_font_list();
 	$fonts_uaf		= array('Use Any Fonts' => array());
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):
@@ -74,8 +70,7 @@ function uaf_send_fonts_redux_list( $custom_fonts ) {
 // X Theme
 add_filter('x_fonts_data', 'uaf_send_fonts_x_theme_list',10,2);
 function uaf_send_fonts_x_theme_list($fonts){
-    $fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+    $fontsData		= get_uploaded_font_list();
 	$fonts_uaf		= array();
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):
@@ -92,8 +87,7 @@ function uaf_send_fonts_x_theme_list($fonts){
 
 // ELEMENTOR
 function uaf_send_fonts_elementor_list( $controls_registry ) {
-    $fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+    $fontsData		= get_uploaded_font_list();
 	$fonts_uaf		= array('Use Any Fonts' => array());
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):
@@ -107,11 +101,10 @@ function uaf_send_fonts_elementor_list( $controls_registry ) {
 }
 add_action( 'elementor/controls/controls_registered', 'uaf_send_fonts_elementor_list', 10, 1 );
 
-// Beaver Builder
+// Beaver Builder (Tested with 2.3.0.1 )
 add_filter('fl_builder_font_families_system', 'uaf_send_fonts_beaver_builder_list',10,2);
 function uaf_send_fonts_beaver_builder_list($fonts){
-    $fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+    $fontsData		= get_uploaded_font_list();
 	$fonts_uaf		= array();
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):
@@ -127,8 +120,7 @@ function uaf_send_fonts_beaver_builder_list($fonts){
 // Themify Builder
 add_filter('themify_get_web_safe_font_list', 'uaf_send_fonts_themify_builder_list',10,2);
 function uaf_send_fonts_themify_builder_list($fonts){
-    $fontsRawData 	= get_option('uaf_font_data');
-	$fontsData		= json_decode($fontsRawData, true);
+    $fontsData		= get_uploaded_font_list();
 	$fonts_uaf		= array();
 	if (!empty($fontsData)):
 		foreach ($fontsData as $key=>$fontData):

@@ -3,7 +3,7 @@ Theme Name: Greydove
 Author: Specky Geek
 Author URI: https://speckygeek.com/
 Description: Grey Dove is a simple and responsive WordPress theme for blogs. Inspired by the retro design from the past.
-Version: 2.0.9
+Version: 2.1.1
 Requires at least: WordPress 4.7
 License: GNU General Public License v3 or later
 License URI: https://www.gnu.org/licenses/gpl.html
@@ -631,7 +631,7 @@ blockquote.aligncenter {
 
 .main-navigation ul ul {
     display: none;
-    margin-left: -1em;
+    /*margin-left: -1em;*/
 }
 
 .main-navigation ul ul a {

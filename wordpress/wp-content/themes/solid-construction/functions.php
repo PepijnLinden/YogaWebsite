@@ -568,6 +568,11 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 require get_parent_theme_file_path( '/inc/widget-social-icons.php' );
 
 /**
+ * Load JSON_LD Breadcrumb file.
+ */
+require trailingslashit( get_template_directory() ) . 'inc/json-ld-schema.php';
+
+/**
  * Register the required plugins for this theme.
  *
  * In this example, we register five plugins:

@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-    <div class="kc_content_wrap">
+    <div id="kc_content_wrap">
         <div class="kc_content_left">
             <header class="page-header">
                 <h1 class="entry-title"><?php esc_html_e( '404 Not Found', 'kids-campus' ); ?></h1>                

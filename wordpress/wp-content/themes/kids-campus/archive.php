@@ -10,7 +10,7 @@
 get_header(); ?>
 
 <div class="container">
-     <div class="kc_content_wrap">
+     <div id="kc_content_wrap">
         <div class="kc_content_left">
 			<?php if ( have_posts() ) : ?>
                 <header class="page-header">

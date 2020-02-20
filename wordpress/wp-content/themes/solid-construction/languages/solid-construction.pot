@@ -1,11 +1,11 @@
-# Copyright (C) 2018 Catch Themes
+# Copyright (C) 2012-2020 Catch Themes
 # This file is distributed under the GNU General Public License, version 3 (GPLv3).
 #, fuzzy
 msgid ""
 msgstr ""
 "Project-Id-Version: Solid Construction\n"
 "Report-Msgid-Bugs-To: https://catchthemes.com/contact-us/\n"
-"POT-Creation-Date: 2018-12-19 14:29+0545\n"
+"POT-Creation-Date: 2020-02-03 23:36-0800\n"
 "PO-Revision-Date: 2016-12-07 01:05-0500\n"
 "Last-Translator: Catch Themes <info@catchthemes.com>\n"
 "Language-Team: Catch Themes <info@catchthemes.com>\n"
@@ -13,7 +13,7 @@ msgstr ""
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 2.2\n"
+"X-Generator: Poedit 2.3\n"
 "X-Poedit-KeywordsList: __;_e;_x;esc_html_e;esc_html__;esc_attr_e;esc_attr__;"
 "_ex:1,2c;_nx:4c,1,2;_nx_noop:4c,1,2;_x:1,2c;_n:1,2;_n_noop:1,2;"
 "__ngettext_noop:1,2;_c,_nc:4c,1,2\n"
@@ -158,15 +158,15 @@ msgstr ""
 msgid "Continue reading"
 msgstr ""
 
-#: ../header.php:24
+#: ../header.php:27
 msgid "Skip to content"
 msgstr ""
 
-#: ../header.php:36
+#: ../header.php:39
 msgid "Site Overlay"
 msgstr ""
 
-#: ../inc/breadcrumb.php:11
+#: ../inc/breadcrumb.php:11 ../inc/json-ld-schema.php:25
 msgid "Home"
 msgstr ""
 
@@ -190,12 +190,13 @@ msgstr ""
 msgid "%1$sView all posts by %2$s"
 msgstr ""
 
-#: ../inc/breadcrumb.php:20
+#: ../inc/breadcrumb.php:20 ../inc/json-ld-schema.php:30
 msgid "Error 404"
 msgstr ""
 
 #: ../inc/breadcrumb.php:58 ../inc/breadcrumb.php:61 ../inc/breadcrumb.php:66
-#: ../inc/breadcrumb.php:72 ../template-parts/footer/site-info.php:22
+#: ../inc/breadcrumb.php:72 ../template-parts/footer/site-info.php:17
+#: ../template-parts/footer/site-info.php:20
 msgid "Y"
 msgstr ""
 
@@ -207,7 +208,7 @@ msgstr ""
 msgid "d"
 msgstr ""
 
-#: ../inc/breadcrumb.php:153
+#: ../inc/breadcrumb.php:157
 #, php-format
 msgid "Page %s"
 msgstr ""
@@ -1054,6 +1055,22 @@ msgstr ""
 msgid "Continue Reading"
 msgstr ""
 
+#: ../inc/json-ld-schema.php:26
+msgid "Archive for "
+msgstr ""
+
+#: ../inc/json-ld-schema.php:27
+msgid "Search results for: "
+msgstr ""
+
+#: ../inc/json-ld-schema.php:28
+msgid "Posts tagged "
+msgstr ""
+
+#: ../inc/json-ld-schema.php:29
+msgid "View all posts by "
+msgstr ""
+
 #: ../inc/metabox/metabox.php:76
 msgid "Default"
 msgstr ""
@@ -1234,14 +1251,21 @@ msgstr ""
 msgid "Contents"
 msgstr ""
 
-#: ../template-parts/footer/site-info.php:18
+#: ../template-parts/footer/site-info.php:17
+#, php-format
+msgctxt "1: Year, 2: Site Title with home URL"
+msgid "Copyright &copy; %1$s %2$s. All Rights Reserved."
+msgstr ""
+
+#: ../template-parts/footer/site-info.php:17
+#: ../template-parts/footer/site-info.php:20
+msgid "by"
+msgstr ""
+
+#: ../template-parts/footer/site-info.php:20
 #, php-format
 msgctxt "1: Year, 2: Site Title with home URL, 3: Privacy Policy Link"
 msgid "Copyright &copy; %1$s %2$s. All Rights Reserved. %3$s"
-msgstr ""
-
-#: ../template-parts/footer/site-info.php:18
-msgid "by"
 msgstr ""
 
 #: ../template-parts/footer/social-footer.php:4

@@ -4,7 +4,7 @@ Theme URI: https://catchthemes.com/themes/solid-construction/
 Author: Catch Themes
 Author URI: https://catchthemes.com/
 Description: Solid Construction is a Free Construction WordPress theme, which is highly customizable and fits perfectly for construction companies to put their website in the forefront. Solid Construction has a capable framework for crafting impressive, modern websites for the architectural firms, building companies, and freelance architects. Your website will look powerful yet elegant on mobile devices and desktop computers, regardless of screen resolution with its responsive design. With Solid Construction, you are able to build an astounding web page with excellent loading speeds resulting in a superior customer experience. Solid Construction is easy-to-use, feature-rich and visually stunning. The theme is extremely creative, modern, and user-friendly. With all the amazing features included, Solid Construction will take care of everything to give your construction website an awesome online presence which in turn will definitely attract more customers to your business. To top it all, the theme is translation ready. For more details, check out the Theme Instructions at https://catchthemes.com/themes/solid-construction/#theme-instructions, support at https://catchthemes.com/support/ and Demo at https://catchthemes.com/demo/solid-construction
-Version: 2.0
+Version: 2.0.4
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: solid-construction
@@ -488,8 +488,14 @@ p,
 dfn,
 cite,
 em,
-i {
+i,
+.job-label {
 	font-style: italic;
+}
+
+.job-label {
+	font-size: 16px;
+	font-size: 1rem;
 }
 
 cite {

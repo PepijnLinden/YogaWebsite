@@ -1,11 +1,52 @@
 <?php 
-$server_status 	= get_option('uaf_server_status');
+if (isset($_POST['submit-uaf-settings'])){
+    if (isset($_POST['uaf_disbale_editor_font_list'])){
+        $uaf_disbale_editor_font_list = 1;
+    } else {
+        $uaf_disbale_editor_font_list = '';
+    }
+    
+    if (isset($_POST['uaf_use_curl_uploader'])){
+        $uaf_use_curl_uploader = 1;
+    } else {
+        $uaf_use_curl_uploader = '';
+    }
+    
+    if (isset($_POST['uaf_use_absolute_font_path'])){
+        $uaf_use_absolute_font_path = 1;
+    } else {
+        $uaf_use_absolute_font_path = '';
+    }
+    
+    if (isset($_POST['uaf_use_alternative_server'])){
+        $uaf_use_alternative_server = 1;
+    } else {
+        $uaf_use_alternative_server = '';
+    }
+
+    if (isset($_POST['uaf_enable_multi_lang_support'])){
+        $uaf_enable_multi_lang_support = 1;
+    } else {
+        $uaf_enable_multi_lang_support = '';
+    }
+    
+    update_option('uaf_disbale_editor_font_list', $uaf_disbale_editor_font_list);
+    update_option('uaf_use_curl_uploader', $uaf_use_curl_uploader);
+    update_option('uaf_use_absolute_font_path', $uaf_use_absolute_font_path);   
+    update_option('uaf_use_alternative_server', $uaf_use_alternative_server);   
+    update_option('uaf_enable_multi_lang_support', $uaf_enable_multi_lang_support); 
+    $settings_message = 'Settings Saved';
+    
+    uaf_write_css(); // Need to rewrite css for uaf_use_relative_font_path setting change 
+}
+
+$server_status 	= $GLOBALS['uaf_server_status'];
 if (isset($_POST['test_server']) || empty($server_status)){
 		if  (in_array  ('curl', get_loaded_extensions())) {
 			$test_code	= date('ymdhis');
 			$ch_test 	= curl_init();
 			curl_setopt($ch_test, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch_test, CURLOPT_URL, $uaf_font_convert_server_url.'/font-convertor/server/check.php');
+			curl_setopt($ch_test, CURLOPT_URL, uaf_get_server_url().'/uaf_convertor/php_server_check.php');
 			curl_setopt($ch_test, CURLOPT_POST, true);
 			$post = array(
 				'test_code' => $test_code
@@ -37,10 +78,9 @@ if (isset($_POST['test_server']) || empty($server_status)){
 		}
 		update_option('uaf_server_status', $server_err_stat);
 		update_option('uaf_server_msg', $server_err_msg);
+        $GLOBALS['uaf_server_status']               = $server_err_stat;
+        $GLOBALS['uaf_server_msg']                  = $server_err_msg;
 }
-$server_status 	= get_option('uaf_server_status');
-$server_message = get_option('uaf_server_msg');
-
 ?>
 
 <?php if (!empty($settings_message)):?>
@@ -59,32 +99,33 @@ $server_message = get_option('uaf_server_msg');
                 <form method="post" action="">
                 <tr>
                 	<td>
-                    	<input type="checkbox" name="uaf_use_alternative_server" value="1" <?php echo $uaf_use_alternative_server == 1?'checked=checked':''; ?> /> Use alternative server. <em>Only use when you are unable to upload the font using both Default Js and PHP Uploader or verify API key.</em>
+                    	<input type="checkbox" name="uaf_use_alternative_server" value="1" <?php echo $GLOBALS['uaf_use_alternative_server'] == 1?'checked=checked':''; ?> /> Use alternative server. <strong><em>( When you are unable to upload the font using both Default Js and PHP Uploader or verify API key. )</em></strong>
                     </td>
                 </tr>
                 
                 <tr>
                 	<td>
-                    	<input type="checkbox" name="uaf_use_curl_uploader" value="1" <?php echo $uaf_use_curl_uploader_value == 1?'checked=checked':''; ?> /> Use PHP uploader. <em>Need PHP Curl.</em>
+                    	<input type="checkbox" name="uaf_use_curl_uploader" value="1" <?php echo $GLOBALS['uaf_use_curl_uploader'] == 1?'checked=checked':''; ?> /> Use PHP uploader. <em>Need PHP Curl.</em>
                     </td>
                 </tr>
                 
                 <tr>
                 	<td>
-                    	<input type="checkbox" name="uaf_use_absolute_font_path" value="1" <?php echo $uaf_use_absolute_font_path == 1?'checked=checked':''; ?> /> Use absolute path for font.
+                    	<input type="checkbox" name="uaf_use_absolute_font_path" value="1" <?php echo $GLOBALS['uaf_use_absolute_font_path'] == 1?'checked=checked':''; ?> /> Use absolute path for font.
                     </td>
                 </tr>
                 
                 <tr>
                 	<td>
-                    	<input type="checkbox" name="uaf_disbale_editor_font_list" value="1" <?php echo $uaf_disbale_editor_font_list_value == 1?'checked=checked':''; ?> /> Disable Font list in wordpress editor. <em>When you have conflict with wordpress editor.</em>                       
+                    	<input type="checkbox" name="uaf_disbale_editor_font_list" value="1" <?php echo $GLOBALS['uaf_disbale_editor_font_list'] == 1?'checked=checked':''; ?> /> Disable Font list in wordpress editor. <strong><em>( When you have conflict with wordpress editor. )</em></strong>       
                     </td>
                 </tr>
-                
-                 
-                
-                
-                
+
+                <tr>
+                    <td>
+                        <input type="checkbox" name="uaf_enable_multi_lang_support" value="1" <?php echo $GLOBALS['uaf_enable_multi_lang_support'] == 1?'checked=checked':''; ?> />Enable Multi Language Font Support <strong><em>( When you are using multi language and need to set different font based on language. Currently Supported : WPML & Polylang )</em></strong>
+                    </td>
+                </tr>                
                 <tr>        
                 	<td><input type="submit" name="submit-uaf-settings" class="button-primary" value="Save Settings" /></td>
             	</tr>
@@ -129,7 +170,7 @@ $server_message = get_option('uaf_server_msg');
         </td>
         <td width="15">&nbsp;</td>
         <td width="250" valign="top">
-        	<?php if ($uaf_use_curl_uploader_value == 1): ?>
+        	<?php if ($GLOBALS['uaf_use_curl_uploader'] == 1): ?>
             <table class="wp-list-table widefat fixed bookmarks">
             	<thead>
                 <tr>
@@ -139,12 +180,12 @@ $server_message = get_option('uaf_server_msg');
                 <tbody>
                 <tr>
                 	<td>
-                    	<div id="server_status" class="<?php echo $server_status; ?>">
-                        	<?php echo str_replace('_',' ',$server_status); ?>
+                    	<div id="server_status" class="<?php echo $GLOBALS['uaf_server_status']; ?>">
+                        	<?php echo str_replace('_',' ',$GLOBALS['uaf_server_status']); ?>
                         </div>						
                         
-                        <?php if ($server_status == 'test_error'): ?>
-						<div class="uaf_test_msg"><?php echo $server_message; ?></div>
+                        <?php if ($GLOBALS['uaf_server_status'] == 'test_error'): ?>
+						<div class="uaf_test_msg"><?php echo $GLOBALS['uaf_server_msg']; ?></div>
                         <?php endif; ?>
                         
                         
@@ -172,8 +213,7 @@ $server_message = get_option('uaf_server_msg');
                     	<li><a href="http://goo.gl/NYtZsX" target="_blank">Setup Instructions</a></li>
                         <li><a href="http://goo.gl/FcC7EL" target="_blank">Quick Virtual Support</a></li>
                         <li><a href="http://goo.gl/XgEqzn" target="_blank">Support Forum</a></li>
-                        <li><a href="http://goo.gl/MKg7VS" target="_blank">Rectify My Problem</a></li>
-                        <li><a href="http://goo.gl/Id7yAo" target="_blank">Contact Us</a></li>
+                        <li><a href="http://goo.gl/MKg7VS" target="_blank">Rectify My Problem / Contact Us</a></li>
                     </ul>
                     </td>
                 </tr>
@@ -183,7 +223,7 @@ $server_message = get_option('uaf_server_msg');
             <table class="wp-list-table widefat fixed bookmarks">
             	<thead>
                 <tr>
-                	<th>Recently Added Plugin</th>
+                	<th>Some Other Plugins</th>
                 </tr>
                 </thead>
                 <tbody>

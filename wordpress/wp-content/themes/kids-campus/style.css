@@ -5,7 +5,7 @@ Author: Grace Themes
 Author URI:
 Description: Kids Campus is a fresh and lively, vibrant and colorful, visually spacious and stimulating, youthful and attractive, creative and delightful, charming and easy to use kindergarten WordPress theme. This theme is perfect for making preschool, kindergartens, professional child care centers and other child related websites. It can also be used for college, school education, nursery, daycare, coaching institute, secondary and primary school, afterschool activities clubs and similar educational organizations. This theme is one of the professionally designed website template that can help you create a beautiful kindergarten website in an instant. Demo Link: http://www.gracethemesdemo.com/kids-campus/
 
-Version: 1.1
+Version: 1.2
 License: GNU General Public License version 2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Text Domain: kids-campus
@@ -103,8 +103,8 @@ a.blogreadmore:hover{ background-color:#404040; color:#fff; }
 
 .boxlayout{ width:1210px; margin:0 auto; background-color:#fff; position:relative; box-shadow:0 -8px 8px #111;}
 .fulllayout{ width:100% !important;}
-.kc_content_wrap{ padding:50px 0;}
-.kc_content_wrap p{ margin-bottom:30px;}
+#kc_content_wrap{ padding:50px 0;}
+#kc_content_wrap p{ margin-bottom:30px;}
 
 .recentpost_listing{ width:50%; float:left; margin:0 0 40px 0; padding:0 5% 0 0;}
 .recentpost_listing .post-thumb{ float:left; width:35%; margin:0 25px 10px 0; position:relative;}
@@ -279,12 +279,6 @@ aside .textwidget{ padding:20px; background-color:#f5f5f4;}
 .wpcf7 textarea{width:60%; border:1px solid #cccccc; box-shadow:inset 1px 1px 2px #ccc; height:150px; color:#797979; margin-bottom:25px; font:12px arial; padding:10px; padding-right:0;}
 .wpcf7 input[type="submit"]{background-color:#efc62c; width:auto; border:none; cursor:pointer; font:18px/22px 'Open Sans',san-serif; color:#ffffff; padding:10px 40px; border-radius:3px;}
 
-/* Text meant only for screen readers. */
-.screen-reader-text {clip: rect(1px, 1px, 1px, 1px);position: absolute !important;	height: 1px;width: 1px;	overflow: hidden;}
-.screen-reader-text:focus {	background-color: #f1f1f1;	border-radius: 3px;	box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);	clip: auto !important;	color: #21759b;	display: block;
-	font-size: 14px;font-size: 0.875rem;font-weight: bold;	height: auto;left: 5px;	line-height: normal;padding: 15px 23px 14px;text-decoration: none;	top: 5px;	width: auto;
-	z-index: 100000; /* Above WP toolbar. */
-}
 
 /* = Comment Form css
 -------------------------------------------------------------- */
@@ -435,4 +429,75 @@ h1.product_title, p.price{ margin-bottom:10px;}
 
 .ui-slider-horizontal .ui-slider-range-max {
     right: -1px;
+}
+
+/* Accessibility */
+/* Text meant only for screen readers. */
+.screen-reader-text {
+  border: 0;
+  clip: rect(1px, 1px, 1px, 1px);
+  clip-path: inset(50%);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute !important;
+  width: 1px;
+  word-wrap: normal !important; 
+  /* Many screen reader and browser combinations announce broken words as they would appear visually. */
+}
+
+.screen-reader-text:focus {
+  background-color: #f1f1f1;
+  border-radius: 3px;
+  box-shadow: 0 0 2px 2px rgba(0, 0, 0, 0.6);
+  clip: auto !important;
+  clip-path: none;
+  color: #21759b;
+  display: block;
+  font-size: 14px;
+  font-size: 0.875rem;
+  font-weight: bold;
+  height: auto;
+  left: 5px;
+  line-height: normal;
+  padding: 15px 23px 14px;
+  text-decoration: none;
+  top: 5px;
+  width: auto;
+  z-index: 100000;
+  /* Above WP toolbar. */
+}
+
+/* Do not show the outline on the skip link target. */
+#kc_content_wrap[tabindex="-1"]:focus {
+  outline: 0;
+}
+
+
+/* = Navigation Focus CSS
+-------------------------------------------- */
+
+button:focus,
+input[type="button"]:focus,
+input[type="reset"]:focus,
+input[type="submit"]:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="url"]:focus,
+input[type="password"]:focus,
+input[type="search"]:focus,
+input[type="number"]:focus,
+input[type="tel"]:focus,
+input[type="range"]:focus,
+input[type="date"]:focus,
+input[type="month"]:focus,
+input[type="week"]:focus,
+input[type="time"]:focus,
+input[type="datetime"]:focus,
+input[type="datetime-local"]:focus,
+input[type="color"]:focus,
+textarea:focus,
+a:focus {
+	outline: thin dotted #0f9fbc;
 }

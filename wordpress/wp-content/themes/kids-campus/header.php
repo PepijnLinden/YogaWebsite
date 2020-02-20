@@ -19,6 +19,15 @@
 </head>
 <body <?php body_class(); ?>>
 <?php
+	//wp_body_open hook from WordPress 5.2
+	if ( function_exists( 'wp_body_open' ) ) {
+	    wp_body_open();
+	}
+?>
+<a class="skip-link screen-reader-text" href="#kc_content_wrap">
+<?php esc_html_e( 'Skip to content', 'kids-campus' ); ?>
+</a>
+<?php
 $kids_campus_show_hdr_contact_info_part 	= get_theme_mod('kids_campus_show_hdr_contact_info_part', false);
 $kids_campus_show_hdr_slider_section 	  		= get_theme_mod('kids_campus_show_hdr_slider_section', false);
 $kids_campus_show_services_3col_area 	= get_theme_mod('kids_campus_show_services_3col_area', false);

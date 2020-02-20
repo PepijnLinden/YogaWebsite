@@ -8,7 +8,7 @@
 get_header(); ?>
 
 <div class="container">
-     <div class="kc_content_wrap">
+     <div id="kc_content_wrap">
         <div class="kc_content_left">
 			<?php while ( have_posts() ) : the_post(); ?>    
                 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>

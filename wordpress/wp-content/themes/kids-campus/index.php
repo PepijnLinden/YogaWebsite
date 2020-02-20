@@ -13,7 +13,7 @@
 get_header(); 
 ?>
 <div class="container">
-     <div class="kc_content_wrap">
+     <div id="kc_content_wrap">
         <div class="kc_content_left">
         	 <div class="default_post_style">
 					<?php

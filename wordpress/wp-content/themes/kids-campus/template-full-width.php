@@ -12,7 +12,7 @@
 
 get_header(); ?>
 <div class="container">
-<div class="kc_content_wrap">
+<div id="kc_content_wrap">
      <div class="kc_content_left fullwidth">               
             <?php while( have_posts() ) : the_post(); ?>
 				  <?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>    

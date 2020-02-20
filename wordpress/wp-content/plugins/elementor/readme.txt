@@ -1,10 +1,11 @@
 === Elementor Page Builder ===
-Contributors: elemntor, KingYes, ariel.k, jzaltzberg, mati1000, pojosh, bainternet, ramiy, yehudah
+Contributors: elemntor, KingYes, ariel.k, jzaltzberg, mati1000, pojosh, bainternet
 Tags: page builder, editor, landing page, drag-and-drop, elementor, visual editor, wysiwyg, design, maintenance mode, coming soon, under construction, website builder, landing page builder, front-end builder
-Requires at least: 4.7
-Tested up to: 5.2
-Requires PHP: 5.4
-Stable tag: 2.5.16
+Requires at least: 5.0
+Tested up to: 5.3
+Requires PHP: 5.6
+Stable tag: 2.8.5
+Beta tag: 2.9.0-beta5
 License: GPLv3
 License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
@@ -161,8 +162,8 @@ You can also add a new language via [translate.wordpress.org](https://translate.
 
 = Minimum Requirements =
 
-* WordPress 4.7 or greater
-* PHP version 5.4 or greater
+* WordPress 5.0 or greater
+* PHP version 5.6 or greater
 * MySQL version 5.0 or greater
 
 = We recommend your host supports: =
@@ -207,7 +208,7 @@ Yeah! Elementor enables to seamlessly build RTL pages as well as other translate
 
 **My site is working with WordPress 2.6, will Elementor work for me?**
 
-No. Elementor supports WordPress 4.7 or greater, and is compatible with PHP 5.4 or greater. We recommend your host supports PHP version 7.0 or greater and MySQL version 5.6 or greater.
+No. Elementor supports WordPress 5.0 or greater, and is compatible with PHP 5.6 or greater. We recommend your host supports PHP version 7.0 or greater and MySQL version 5.6 or greater.
 
 == Screenshots ==
 
@@ -220,6 +221,335 @@ No. Elementor supports WordPress 4.7 or greater, and is compatible with PHP 5.4 
 7. **Shape Divider.** Choose from a wide array of shape dividers and separate your sections in endless ways, that until now were simply not possible.
 
 == Changelog ==
+
+= 2.9.0 - 2020-02-10 =
+* New: Introducing Theme Style - set your default HTML tags styling using Elementor ([#534](https://github.com/elementor/elementor/issues/534))
+* New: Added Custom Link Attributes to Link Options to allow adding custom attributes to `<a>` tags ([#5716](https://github.com/elementor/elementor/issues/5716), [#3642](https://github.com/elementor/elementor/issues/3642), [#9225](https://github.com/elementor/elementor/issues/9225), [#9079](https://github.com/elementor/elementor/issues/9079))
+* Tweak: Added Title & Description to Lightbox ([#9826](https://github.com/elementor/elementor/issues/9826), [#2502](https://github.com/elementor/elementor/issues/2502))
+* Tweak: Added Full Screen option in Lightbox ([#5260](https://github.com/elementor/elementor/issues/5260))
+* Tweak: Added direct sharing options in Lightbox ([#2502](https://github.com/elementor/elementor/issues/2502))
+* Tweak: Added Zoom option in Lightbox ([#9399](https://github.com/elementor/elementor/issues/9399))
+* Tweak: Moved `social-share.js` to Core instead of Pro ([Developers Blog Post](https://developers.elementor.com/migration-of-modules-to-core-in-2-9/))
+* Tweak: Moved `link-actions.js` to Core instead of Pro and changed its name to `url-actions.js` ([Developers Blog Post](https://developers.elementor.com/migration-of-modules-to-core-in-2-9/))
+* Tweak: Added dynamic capabilities to Title control in Toggle widget ([#10070](https://github.com/elementor/elementor/issues/10070))
+* Tweak: Disabled autocomplete feature from the Color Picker ([#10030](https://github.com/elementor/elementor/issues/10030))
+* Tweak: Added Mix social network to recommended tab in Social Icons widget ([#10099](https://github.com/elementor/elementor/issues/10099))
+* Tweak: Removed StumbleUpon social network from recommended tab in Social Icons widget ([#10099](https://github.com/elementor/elementor/issues/10099))
+* Tweak: Added `i18n` function to translation string in DB upgrades manager (Props [@ramiy](https://github.com/ramiy))
+* Tweak: Added `vh` and `em` size units to Max Width control in Image widget ([#5376](https://github.com/elementor/elementor/issues/5376))
+* Tweak: Added `vh` and `em` size units to Spacer widget
+* Tweak: Exposed external API for Swiper instances ([Developers Blog Post](https://developers.elementor.com/expose-swiper-in-elementor/))
+* Tweak: Updated Pickr library to v1.5.0
+* Tweak: Updated Dialogs Manager library to v4.7.5
+* Tweak: Added URL hash routing capability to Lightbox
+* Tweak: Refactored panel controls UI
+* Tweak: Updated Font Awesome library to v5.12.0
+* Tweak: Converted `add_render_attributes` for custom links to `add_link_attributes()`
+* Tweak: Added a mixin for `absolute-center` positioning
+* Tweak: Updated `eicons` library to v5.6.1
+* Tweak: Changed `eicon-zoom-in` icon to `eicon-zoom-in-bold` in Template Library
+* Tweak: Allow background image and color being displayed in empty column
+* Tweak: Converted `editor-base.js` to ES6
+* Tweak: Added `featured_image` URL to frontend config
+* Tweak: Made minor UI tweaks to "Recalc" button in System Info
+* Tweak: Added inline editing capability to Progress Bar widget Title
+* Tweak: Removed redundant display conditions from Drop Cap section in Text Editor widget
+* Tweak: Remove redundant `label_block` parameters from control instances
+* Tweak: Added 'alt' property when using SVG icons in Social Icons widget
+* Tweak: Added translators comment explaining the `%s` placeholder in Video Provider control
+* Tweak: Added Pro features descriptive promotions to Editor panel
+* Tweak: Added Dynamic capabilities to be active by default in WYSIWYG Control
+* Tweak: Changed the position of all panel tooltips to appear above the controls
+* Tweak: Replaced nerd icons with new Elementor emojis
+* Tweak: Added descriptive message suggesting backing up the Database before upgrading to Font Awesome 5
+* Tweak: Changed panel arrow icon to chevron
+* Tweak: Deprecated Typography section in Section & Column elements for users who didn't place values
+* Fix: `playsinline` attribute missing when setting self-hosted video to Play on Mobile in Video widget ([#9892](https://github.com/elementor/elementor/issues/9892))
+* Fix: Beta sign-up modal closes unexpectedly ([#10355](https://github.com/elementor/elementor/issues/10355))
+* Fix: "Slides to Show" option doesn't work on Tablet view in Image Carousel widget ([#10227](https://github.com/elementor/elementor/issues/10227))
+* Fix: Previous and Next buttons are not displaying on Safari in Media Carousel's Cube mode ([#9725](https://github.com/elementor/elementor/issues/9725))
+* Fix: Form style being reset adding MailChimp/Getresponse action in Form widget ([#9313](https://github.com/elementor/elementor/issues/9313))
+* Fix: Post Title and Archive Excerpt wrong values in edge cases
+* Fix: Wrong `<select>` field width in "Add New" dialog
+* Fix: Gap created by the "Add Media" button in Text Editor widget
+* Fix: "Insert Template" library button glitch
+* Fix: WordPress Media 'Image Details' fields are 100% width instead of contained
+* Fix: Pause on hover can't be disabled in Image Carousel widget
+* Fix: Aligned Dark UI Theme gradients in panel and library tabs
+* Fix: Category Select2 dropdown stays above the view on scroll in Template Library modal
+* Deprecated: See all deprecations to this version in our ([Developers Deprecations Post](https://developers.elementor.com/v2-9-0-planned-deprecations/))
+
+= 2.8.5 - 2020-01-27 =
+* Fix: Handle corrupted DB log
+* Fix: Template inserted upside down in edge cases
+* Fix: Added data sanitization on System Info
+* Fix: Error when trying to edit widgets with `inline` Icons control before Font Awesome 5 migration
+
+= 2.8.4 - 2020-01-19 =
+* Tweak: Changed default color in Color Picker
+* Fix: Curved edge with background color in Toggle widget ([#5156](https://github.com/elementor/elementor/issues/5156))
+* Fix: Added sanitize data on create new template
+* Fix: Inconsistent panel view when deleting all content
+* Fix: Empty Typography control after Reset Style
+* Fix: Inline sizing delay when position is set to Absolute/Fixed in Image widget
+* Fix: Wrong sizing on undo/redo to Section element columns
+
+= 2.8.3 - 2020-01-01 =
+* Tweak: Improved accessibility to "Go Pro" menu item ([#9021](https://github.com/elementor/elementor/issues/9021))
+* Tweak: Added new CLI command - User Connect
+* Tweak: Updated Recommended Icons tab in Toggle and Accordion widgets
+* Fix: Placement glitch when dragging a widget to a new section ([#9954](https://github.com/elementor/elementor/issues/9954))
+* Fix: Controls popover closes when picking a color in it
+* Fix: Dark mode style glitches in edge cases
+* Fix: Correct calculation of usage data
+* Fix: Pasting style of one Section to other changes the structure
+* Fix: Long text overflow issue in Divider widget
+* Fix: Scroll bars visible when not needed in Icon Library
+
+= 2.8.2 - 2019-12-16 =
+* Tweak: Improved hidden responsive elements visibility
+* Fix: Autoplay not working in Image Carousel widget ([#9872](https://github.com/elementor/elementor/issues/9872))
+* Fix: Logger fatal error on upgrade ([#9872](https://github.com/elementor/elementor/issues/9872))
+* Fix: Negative custom shapes in Editor ([#9850](https://github.com/elementor/elementor/issues/9850))
+* Fix: Render correct widget data in Global widgets
+* Fix: `0` value in Dynamic Tags causes Undefined Index error
+
+= 2.8.1 - 2019-12-11 =
+* Fix: Style pasting issue on Columns ([#9811](https://github.com/elementor/elementor/issues/9811))
+* Fix: Column duplication not working for Inner Section widget ([#9824](https://github.com/elementor/elementor/issues/9824))
+* Fix: Redundant renders when changing colors in Color control
+* Fix: Dark Mode glitches in WordPress widgets ([#9829](https://github.com/elementor/elementor/issues/9829))
+* Fix: Repeater rows doesn't have `_id` in edge cases
+* Fix: Connect issue for Multisite users
+* Fix: Dynamic tag fallback does not handle '0' character
+
+= 2.8.0 - 2019-12-09 =
+* New: Introducing new Color Picker control with Saved Colors built-in ([#6968](https://github.com/elementor/elementor/issues/6968), [#8982](https://github.com/elementor/elementor/issues/8982), [Developers Blog Post](https://developers.elementor.com/elementor-2-8-new-color-picker/]))
+* New: Introducing Dark Mode UI theme ([#9263](https://github.com/elementor/elementor/issues/9263), [#8249](https://github.com/elementor/elementor/issues/8249), [#9125](https://github.com/elementor/elementor/issues/9125))
+* New: User Preferences section in Editor Panel menu
+* Tweak: Better responsive visibility indication ([#8020](https://github.com/elementor/elementor/issues/8020), [#4775](https://github.com/elementor/elementor/issues/4775))
+* Tweak: Added `background-size` and `background-position` controls to Background Slideshow ([#9199](https://github.com/elementor/elementor/issues/9199))
+* Tweak: Removed Google+ network from "Recommended" tab in Social Icons widget ([#9393](https://github.com/elementor/elementor/issues/9393))
+* Tweak: Replaced default Google+ network icon with YouTube icon in Social Icons widget
+* Tweak: Added dynamic capabilities to alert widget ([#9436](https://github.com/elementor/elementor/issues/9436))
+* Tweak: Added "Play on Mobile" option to allow iOS autoplay to Video widget ([#3442](https://github.com/elementor/elementor/issues/3442))
+* Tweak: Added inline skin for Icon control
+* Tweak: Added `elementor/settings/controls/checkbox_list_cpt/post_type_objects` filter to control over displayed CPT in WordPress Dashboard UI (Props [@sc0ttkclark](https://github.com/sc0ttkclark))
+* Tweak: Moved "Editing Handles" and "Lightbox in editor" options to the new "Preferences" section
+* Tweak: Added `playsinline` attribute to Vimeo and YouTube sources to allow autoplay on iOS devices in Background Video
+* Tweak: Added Documents count to System Info
+* Tweak: Added global utility function for adding link attributes in Button widget
+* Tweak: Re-designed responsive mode switcher control
+* Tweak: Re-designed alerts and notices in the Editor Panel
+* Tweak: Improved styling of checkboxes and radio inputs
+* Tweak: Changed "Custom Positioning" section label to "Positioning"
+* Tweak: Allow access to Templates Library for connected users only
+* Tweak: Changed icon control skin to "Inline" in Toggle and Accordion widgets
+* Tweak: Added Icon Manager "Recommended" tab in Toggle and Accordion widgets
+* Tweak: Changed all occurrences of `text-overflow: ellipsis` to a single `mixin`
+* Tweak: Added "Pause On Interaction" option to Image Carousel widget
+* Tweak: Updated `e-icons` library to v5.5.0
+* Tweak: Updated `e-gallery` library to v1.1.0
+* Tweak: Dropped Support for WP v4.9, now supporting WP v5.0+
+* Tweak: Dropped delete revision option in Revisions Panel since WordPress v5.3 ([Topic](http://core.trac.wordpress.org/ticket/43709))
+* Tweak: Added compatibility with WordPress v5.3
+* Fix: Use CSS Flex to align and order button icon ([#561](https://github.com/elementor/elementor/issues/561))
+* Fix: Remove Ninja Forms compatibility script which causes server issues ([#8267](https://github.com/elementor/elementor/issues/8267))
+* Fix: Added `title` attribute to embedded iframes ([#9374](https://github.com/elementor/elementor/issues/9374), Props [@shipley-dcc](https://github.com/shipley-dcc))
+* Fix: Reset style in a button doesn't work on colors ([#8454](https://github.com/elementor/elementor/issues/8454))
+* Fix: No fallback when SVG file doesn't exist ([#9481](https://github.com/elementor/elementor/issues/9481))
+* Fix: Custom shapes "negative" support fix ([#9761](https://github.com/elementor/elementor/issues/9761))
+* Fix : Shapes SVG include PHP Parse Error If the uploaded SVG file contain `<?xml version="1.0" encoding="UTF-8"?>` ([#9693](https://github.com/elementor/elementor/issues/9693), Props [@MarieComet](https://github.com/MarieComet))
+* Fix: Added better output escaping in the attributes for checkbox lists in Admin forms (Props [@MarieComet](https://github.com/MarieComet))
+* Fix: Adding a link overrides the Title and Description colors in Testimonial widget
+* Fix: Removed redundant Editor Panel Spacer in Image Carousel widget
+* Fix: "Delete All Content" doesn't close current widget editing options
+* Fix: Pause on hover option doesn't work in Image Carousel widget
+* Fix: Limit transition duration in Ken Burns CSS only to `transform` property
+* Fix: Recommended tab icons don't change when there's more than one `Icons` control per widget
+* Fix: Hidden sticky section generates redundant scroll offset when using Anchors
+* Fix: Inserting a saved section as a template uses the same `ID`
+* Fix: Double rendering of elements in Editor
+* Deprecated: See all deprecations to this version in our [Developers Deprecations Post](https://developers.elementor.com/v2-8-0-planned-deprecations/)
+
+= 2.7.6 - 2019-12-08 =
+* Fix: Transition Duration option not applying to elements background
+* Fix: Hide Beta Testers signup form if the user already subscribed
+* Fix: Added HTML escaping to `Admin` class and to System Info
+
+= 2.7.5 - 2019-10-28 =
+* Tweak: Changed the "Finder" icon in the Editor panel
+* Fix: Added official color support for `linkedin-in` icon in Social Icons widget ([#9298](https://github.com/elementor/elementor/issues/9298))
+* Fix: `Ctrl/CMD + Shift + L` not opening Library modal
+* Fix: Clear Log button HTML shows in System Info Copy & Paste section
+* Fix: Ken burns effect not working on the 1st slide if Infinite Loop option is turned off in Background Slideshow
+
+= 2.7.4 - 2019-10-06 =
+* Tweak: Improved filtering animation behavior in Gallery widget
+* Fix: Icon custom colors being overridden by styling custom colors in Social Icons widget
+* Fix: Added `SVG` custom color support for Social Icons widget
+* Fix: Elements not being displayed when it has the value `0`
+* Fix: Pagination glitch in image carousel widget
+* Fix: Select2 throws JS console error when trying to unset a dropdown value in Templates modal
+* Fix: Background Slideshow overrides the Columns' border-radius
+* Fix: Tabs not working after previewing a template in Templates modal
+
+= 2.7.3 - 2019-09-24 =
+* Tweak: Updated E-gallery library to v1.0.1
+* Fix: Images overlap issue in Image Carousel widget ([Topic](https://wordpress.org/support/topic/elementor-image-carousel-2/#post-11943476))
+* Fix: Removed extra character in Divider widget ([#9102](https://github.com/elementor/elementor/issues/9102))
+* Fix: Console error after resetting "Background Slideshow" gallery
+* Fix: Popup templates not visible in My Templates tab on import action
+* Fix: Panel spinner issue caused by 3rd party addons when activating Safe Mode
+* Fix: Lightbox won't close on background click in Image widget
+* Fix: "Need Help" hover UI glitch in RTL
+* Fix: SVG icon missing in Icon List widget
+
+= 2.7.2 - 2019-09-16 =
+* Fix: Data updater stuck in site with large database ([Topic](https://wordpress.org/support/topic/the-elementor-data-updater-problems-continue/), [Topic](https://wordpress.org/support/topic/v2-7-not-stable/))
+* Fix: Added backward compatibility for deprecated hooks in page settings ([#9060](https://github.com/elementor/elementor/issues/9060), [#9080](https://github.com/elementor/elementor/issues/9080))
+* Fix: Added support for custom document in `autosave` ([#9070](https://github.com/elementor/elementor/issues/9070))
+* Fix: Changed the default `slidesPerGroup` from 2 to 1 in Image Carousel widget
+
+= 2.7.1 - 2019-09-10 =
+* Fix: Self Hosted video lightbox closing when clicking on the video ([#8931](https://github.com/elementor/elementor/issues/8931))
+* Fix: Downgrade from v2.7.0 causes 500 errors
+* Fix: Vertical alignment issue in Safari browser ([#9034](https://github.com/elementor/elementor/issues/9034))
+* Fix: `contains` and `!contains` control conditions ([#9043](https://github.com/elementor/elementor/issues/9043))
+* Fix: Use background updater for v2.7 script task ([Topic](https://wordpress.org/support/topic/v2-7-not-stable/))
+* Fix: Backwards compatibility for previous versions using Divider widget
+
+= 2.7.0 - 2019-09-08 =
+* New: Added background slideshow to Section, Column and Inner Section elements ([#2898](https://github.com/elementor/elementor/issues/2898), [#4022](https://github.com/elementor/elementor/issues/4022))
+* New: Editor JS API to improve capabilities and stability ([Developers Blog Post](https://developers.elementor.com/elementor-2-7-new-editor-js-api-e/))
+* New: Added additional divider styles to Divider widget ([#7418](https://github.com/elementor/elementor/issues/7418))
+* Tweak: Background videos now support Vimeo as a source ([#1903](https://github.com/elementor/elementor/issues/1903))
+* Tweak: Added the option to add Icon and Text to Divider widget ([#7418](https://github.com/elementor/elementor/issues/7418))
+* Tweak: Converted all widgets JS handlers to ES6 classes ([Developers Blog Post](https://developers.elementor.com/building-a-simple-custom-widget-with-javascript/), [Developers Documentation](https://developers.elementor.com/creating-a-new-widget/adding-javascript-to-elementor-widgets/))
+* Tweak: Added option to select the version you rollback to in "Version Control" tool
+* Tweak: Use `swiper.js` instead of `slick.js` in Image Carousel widget ([Developers Blog Post](https://developers.elementor.com/elementor-2-7-moving-sliders-from-slick-to-swiper/))
+* Tweak: Implemented virtual list render in Icons Library to improve performance and stability
+* Tweak: Added support of `wp_body_open` in Canvas template
+* Tweak: Editor Panel UI tweaks
+* Tweak: Updated Gallery control UI
+* Tweak: Moved structure control into section panel in Section element
+* Tweak: Added option to allow background video to play on mobile devices if device support it
+* Tweak: Added more post statuses to show in the Finder ([#8175](https://github.com/elementor/elementor/issues/8175))
+* Tweak: Added `Space-around`, `Space-between` and `Space-evenly` to Vertical Align options in Section element
+* Tweak: Added filter for additional styles by 3rd party plugins `elementor/divider/styles/additional_styles` to Divider widget
+* Tweak: Removed "Need Help?" button from WP widgets
+* Tweak: Updated `Eicons` library to v5.4.0
+* Fix: Background video plays on mobile devices in some cases (#8782, [Developers Blog Post](https://developers.elementor.com/background-video-in-mobile-mode/))
+* Fix: Icon List alignment issue ([#8539](https://github.com/elementor/elementor/issues/8539))
+* Fix: Two clicks needed to start Vimeo videos with image overlay
+* Fix: Init navigator only once when changing page template
+* Fix: Added backwards compatibility for `Controls_Manager::add_tab()` and `\Elementor\Core\Settings\Manager::add_settings_manager()`
+* Fix: Carousels navigation arrows causes horizontal scroll when setting to `Outside`
+* Fix: Heading widget with the character "0" is not visible on frontend
+* Deprecated: Removed old deprecated aliases ([Developers Blog Post](https://developers.elementor.com/v2-7-0-planned-deprecations/))
+
+= 2.6.8 - 2019-08-07 =
+* Tweak: Added SVG import/export support to Icons control
+* Fix: Empty `caps` while checking user `caps` ([#8732](https://github.com/elementor/elementor/issues/8732))
+* Fix: Rotate control not working in Icon widget responsive modes ([#8753](https://github.com/elementor/elementor/issues/8753))
+* Fix: Counter widget start number greater than 999
+* Fix: Avoid migrating old Icon value if new one exists on import
+* Fix: Editor not being loaded when using an Icon from removed Icon Set
+
+= 2.6.7 - 2019-07-30 =
+* Tweak: Run `.htaccess` inspection only when needed
+* Tweak: UI glitches in `select2` control
+* Tweak: `get_style_depends` styles are now loaded in editor preview
+* Fix: Avoid false-positive editor loading error ([#8706](https://github.com/elementor/elementor/issues/8706))
+* Fix: Disable browser suggestions on panel elements search input ([#6581](https://github.com/elementor/elementor/issues/6581))
+* Fix: Contributor role can view other contributors draft and pending posts when Elementor is installed ([#8689](https://github.com/elementor/elementor/issues/8689))
+* Fix: Save changed before previewing a revision
+
+= 2.6.6 - 2019-07-23 =
+* Fix: WordPress editor is open by default ([#8628](https://github.com/elementor/elementor/issues/8628), [#8647](https://github.com/elementor/elementor/issues/8647))
+* Fix: Icon spacing disappeared after upgrading to Font Awesome 5 ([#8609](https://github.com/elementor/elementor/issues/8609))
+* Fix: Star icon appears instead of an unset icon in Icon Box widget after upgrading to Font Awesome 5 ([#8596](https://github.com/elementor/elementor/issues/8596))
+* Fix: Empty icon library by Using JS files instead of JSON for icon lists
+* Fix: `Preview Could Not be Loaded` message displayed if `$_SERVER['SERVER_SOFTWARE']` is empty
+* Fix: Navigator Indicators RTL UI glitches
+
+= 2.6.5 - 2019-07-18 =
+* Fix: Reverted the changes in Section and Column Vertical Alignment control
+
+= 2.6.4 - 2019-07-17 =
+* Tweak: Added CSS variable for admin font family
+* Tweak: Updated dialog library
+* Tweak: Improved `.htaccess` error message in `Preview Could Not Be Loaded` message
+* Fix: `Condition` and `Conditions` not working together ([#8233](https://github.com/elementor/elementor/issues/8233))
+* Fix: Pages are always displayed in `draft` status ([#8510](https://github.com/elementor/elementor/issues/8510))
+* Fix: Incorrect Absolute position dragging values in RTL ([#7719](https://github.com/elementor/elementor/issues/7719))
+* Fix: SVG icon hover color in Button widget
+
+= 2.6.3 - 2019-07-15 =
+* Tweak: Improve Icon control preview color for better visibility ([#8530](https://github.com/elementor/elementor/issues/8530))
+* Tweak: Cleaning all output buffering in order to enable Gzip
+
+= 2.6.2 - 2019-07-14 =
+* Tweak: Make sure activeTab exists in Icon library
+* Fix: Star rating widget alignment is not responsive ([#8444](https://github.com/elementor/elementor/issues/8444))
+* Fix: Temporarily reverted `application/json` content type to support various server configurations
+* Fix: Progress Bar typography backward compatibility
+* Fix: Missing `fas` icons in Social Icons widget
+* Fix: Navigator Indicators tooltip location
+* Fix: Added Icon List backward compatibility on template import
+
+= 2.6.1 - 2019-07-10 =
+* Tweak: Added responsive controls to Icon size and Icon rotation in Icon widget
+* Fix: Preview Could Not Be Loaded `.htaccess` error if permalink structure not set
+* Fix: Added backward compatibility for Icon control
+* Fix: UI glitches in the global lightbox modal
+
+= 2.6.0 - 2019-07-09 =
+* New: Introducing Icon Manager - the new way to add icons into your page ([#110](https://github.com/elementor/elementor/issues/110))
+* New: Introducing SVG file library ([#5570](https://github.com/elementor/elementor/issues/5570))
+* New: Replaced Font Awesome 4 with Font Awesome 5 ([#4430](https://github.com/elementor/elementor/issues/4430))
+* New: Added Help links to elements for better support flow
+* New: Added Navigator indicators for Custom Position ([#2180](https://github.com/elementor/elementor/issues/2180))
+* New: Introducing Deprecated Notice control for developers ([Development Doc](https://developers.elementor.com/elementor-controls/deprecated-notice-control/))
+* Tweak: Added 9:16 Aspect ratio (vertical video) support for Video widget ([#7051](https://github.com/elementor/elementor/issues/7051))
+* Tweak: Set pre-selected attachment when opening the media modal ([#7937](https://github.com/elementor/elementor/issues/7937))
+* Tweak: Added more style options for Progress Bar widget ([#3413](https://github.com/elementor/elementor/issues/3413))
+* Tweak: Added icon alignment option to icon list ([#8219](https://github.com/elementor/elementor/issues/8219))
+* Tweak: Added option to hide columns in Navigator ([#7863](https://github.com/elementor/elementor/issues/7863))
+* Tweak: Added vertical alignment option to Image Carousel ([#6963](https://github.com/elementor/elementor/issues/6963))
+* Tweak: Added Responsive option for the Content Align in Column ([#2554](https://github.com/elementor/elementor/issues/2554))
+* Tweak: Removed `Prevent Scroll` option from Google Maps widget which now defaults in the map origin ([#8244](https://github.com/elementor/elementor/issues/8244))
+* Tweak: Reduce-motion accessibility support for CSS animation library ([#7968](https://github.com/elementor/elementor/issues/7968))
+* Tweak: Added start & end time for self-hosted background video ([#7941](https://github.com/elementor/elementor/issues/7941))
+* Tweak: Added Play once option for background video ([#5129](https://github.com/elementor/elementor/issues/5129))
+* Tweak: Added the `playsinline` attribute to autoplay background video on iOS ([#8198](https://github.com/elementor/elementor/issues/8198))
+* Tweak: Added `text-shadow` option to Button widget ([#7317](https://github.com/elementor/elementor/issues/7317))
+* Tweak: Set `$fonts_to_enqueue` as public to allow manual enqueue of fonts ([#7622](https://github.com/elementor/elementor/issues/7622))
+* Tweak: Show dashboard notices for admin role only ([#7304](https://github.com/elementor/elementor/issues/7304))
+* Tweak: Added Viber icon for Social Icons widget ([#4430](https://github.com/elementor/elementor/issues/4430))
+* Tweak: Added dynamic capabilities to link control in Social Icons widget ([#8097](https://github.com/elementor/elementor/issues/8097))
+* Tweak: Added option to pick custom colors per icon in Social Icons widget ([#4430](https://github.com/elementor/elementor/issues/4430))
+* Tweak: Added default background color to Social Icons widget
+* Tweak: Added opt-in form to Elementor updates for beta testers
+* Tweak: Updated E-icons library to v5.3.2
+* Tweak: Removed all Font Awesome 4 dependencies
+* Tweak: Clear 3rd party cache plugins on every change in Maintenance Mode
+* Tweak: Using `application/json` content type in order to avoid double zipping by the server to reduce load panel errors
+* Tweak: Added control to support Exit Animations
+* Tweak: Added editor notices bar for admin role only
+* Tweak: Moved elements PHP handles to JS - resolves double Editing Handles in the Post Content widget
+* Tweak: Added custom messages for "Preview could not be loaded" state
+* Tweak: Added focus state emphasis to Dimensions control
+* Tweak: Redesigned Media control
+* Tweak: Use `wp_register_style` to allow widgets to enqueue icon styles
+* Fix: Open the correct video when you have multiple images with the same video link in the same Media Carousel ([#8047](https://github.com/elementor/elementor/issues/8047))
+* Fix: Added escaping in the template type ([#8435](https://github.com/elementor/elementor/issues/8435))
+* Fix: Compression encoding for `gzip` to `brotli` conversions (Props [@pingram3541](https://github.com/pingram3541))
+* Fix: Vimeo video lightbox is not playing automatically
+* Fix: Backslash was removed from Custom CSS in page settings
+* Fix: Set LTR direction only to `input` and `textarea` in RTL view
+* Fix: Color Picker UI glitches in RTL view
+* Fix: Avoid adding CSS for the first post in archive pages
 
 = 2.5.16 - 2019-05-28 =
 * Tweak: Added `reduce-motion` accessibility support for CSS animation library ([#7968](https://github.com/elementor/elementor/issues/7968), Props [@drawcard](https://github.com/drawcard))
@@ -236,7 +566,7 @@ No. Elementor supports WordPress 4.7 or greater, and is compatible with PHP 5.4 
 
 = 2.5.13 - 2019-04-10 =
 * Fix: Resize viewport not working properly ([#7795](https://github.com/elementor/elementor/issues/7795), [Topic](https://wordpress.org/support/topic/width-is-not-responding-automatically/), [Topic](https://wordpress.org/support/topic/stretch-section-problem/))
-* Fix: Remove Shape Divider in the editor if set to 'None'
+* Fix: Remove Shape Divider in the editor if set to `None`
 
 = 2.5.12 - 2019-04-08 =
 * Fix: DB updates process not running in edge cases ([#7725](https://github.com/elementor/elementor/issues/7725))
@@ -493,7 +823,7 @@ No. Elementor supports WordPress 4.7 or greater, and is compatible with PHP 5.4 
 * Tweak: Update Eicons v3.9.2
 * Fix: Added default width for SVG image to support edge cases ([#5987](https://github.com/elementor/elementor/issues/5987))
 * Fix: Better WP Widget hooks support ([#5844](https://github.com/elementor/elementor/issues/5844))
-* Fix: Exclude image link from lightbox when the link has 'download' attribute ([#5996](https://github.com/elementor/elementor/issues/5996))
+* Fix: Exclude image link from lightbox when the link has `download` attribute ([#5996](https://github.com/elementor/elementor/issues/5996))
 * Fix: Background Gradient not working inside Repeater control ([#5914](https://github.com/elementor/elementor/issues/5914))
 * Fix: Added support for future post status ([#5681](https://github.com/elementor/elementor/issues/5681), [#6000](https://github.com/elementor/elementor/issues/6000))
 * Fix: Missing string translations ([#5989](https://github.com/elementor/elementor/issues/5989))
@@ -1149,7 +1479,7 @@ No. Elementor supports WordPress 4.7 or greater, and is compatible with PHP 5.4 
 
 = 1.6.3 - 2017-08-09 =
 * Fix: Lightbox for Image Carousel ([#2135](https://github.com/elementor/elementor/issues/2135))
-* Fix: Allow to dismiss message asking to share anonymous usage data ([#2136](https://github.com/elementor/elementor/issues/2136))
+* Fix: Allow to dismiss message asking to share non-sensitive usage data ([#2136](https://github.com/elementor/elementor/issues/2136))
 * Fix: Conflict with Advanced TinyMCE plugin ([Topic](https://wordpress.org/support/topic/tinymce-unbreakable-space-not-display/))
 
 = 1.6.2 - 2017-08-03 =

@@ -24,9 +24,9 @@ if ( ! function_exists( 'solid_construction_breadcrumb' ) ) :
 		/* === END OF OPTIONS === */
 
 		global $post, $paged, $page;
-		$linkBefore = '<span class="breadcrumb" typeof="v:Breadcrumb">';
+		$linkBefore = '<span class="breadcrumb">';
 		$linkAfter  = '</span>';
-		$linkAttr   = ' rel="v:url" property="v:title"';
+		$linkAttr   = '';
 		$link       = $linkBefore . '<a' . $linkAttr . ' href="%1$s">%2$s</a>' . $linkAfter;
 
 
@@ -83,14 +83,18 @@ if ( ! function_exists( 'solid_construction_breadcrumb' ) ) :
 				}
 				else {
 					$cat  = get_the_category();
-					$cat  = $cat[0];
-					$cats = get_category_parents( $cat, true, '' );
-					$cats = preg_replace( "#^(.+)$#", "$1", $cats );
-					$cats = str_replace( '<a', $linkBefore . '<a' . $linkAttr, $cats );
-					$cats = str_replace( '</a>', '</a>' . $linkAfter, $cats );
-					echo $cats;  // WPCS: XSS OK.
+					if ( ! is_wp_error( $cat ) ) {
+						$cats = get_category_parents( $cat, true, '' );
+							
+						if ( ! is_wp_error( $cats ) ) {
+							$cats = preg_replace( "#^(.+)$#", "$1", $cats );
+							$cats = str_replace( '<a', $linkBefore . '<a' . $linkAttr, $cats );
+							$cats = str_replace( '</a>', '</a>' . $linkAfter, $cats );
+							echo $cats;
+						}
 
-					echo $before . esc_html( get_the_title() ) . $after;  // WPCS: XSS OK.
+						echo $before . esc_html( get_the_title() ) . $after;
+					}
 				}
 			} elseif ( !is_single() && !is_page() && get_post_type() != 'post' && !is_404() ) {
 				$post_type = get_post_type_object( get_post_type() );

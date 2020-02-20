@@ -1,9 +1,9 @@
 === Use Any Font [ Freemium ] ===
 Contributors: dnesscarkey
-Tags: custom fonts, font embed, font uploader, any font, embed any font, font uploader, css3 font embed, @font-face embed, font conversion, webfont, ttf, opentype
+Tags: custom fonts, font embed, font uploader, any font, embed any font, font uploader, css3 font embed, @font-face embed, font conversion, webfont, ttf, opentype, woff2
 Requires at least: 3.0
-Tested up to: 5.2.1
-Stable tag: 5.3
+Tested up to: 5.3.2
+Stable tag: 5.5
 
 Embed any custom font in your website. #1 Rated custom fonts plugin by WPMUDev.org.
 
@@ -27,10 +27,11 @@ Use Any Font gives you freedom to use custom fonts in your website. It is not li
 <a href="https://themify.me/member/aff/go/dnesscarkey/?cr=aHR0cHM6Ly90aGVtaWZ5Lm1lL2J1aWxkZXI=" target="_blank">Themify Builder</a>, and any visual builder using the class. 
 * Custom fonts uploaded can be directly used from Theme options panel for major themeforest themes like <a href="https://goo.gl/Oy6tvt" target="_blank">Avada, X Theme, Salient, Oshine, KLEO, ShopKeeper, SimpleMag, Porto and many more (540+). Check out full list here.</a>
 * Supports font format including ttf, otf, woff. The required fonts are converted automatically.
-* Accepts custom font file upto 15 MB.
-* Embed fonts using @font-face css. SEO friendly and quick loading.
+* Accepts custom font file upto 25 MB.
+* Embed fonts using @font-face css. SEO friendly and quick loading due to woff2 compression.
 * Multiple custom fonts can be used.
 * Faster load time as your custom fonts are stored on your own server.
+* Supports font assign based on language for WPML and Polylang multi language plugin.
 
 <strong>Support</strong>
 
@@ -85,7 +86,10 @@ You can check video for more details.
 
 = Does it works with any theme ? =
 
-Its built in Font Upload and Font assign section allows you to assign custom fonts to any theme. However, for popular themes like <a href="https://goo.gl/Oy6tvt" target="_blank">Avada, X Theme, Salient, Oshine, KLEO, ShopKeeper, SimpleMag, Porto and many more (540+). Check out full list here.</a>, we have added extra features that allows you to assign the custom font to your theme using the theme options panel.
+Its built-in Font Upload and Font assign section allows you to assign custom fonts to any theme. However, for popular themes like <a href="https://goo.gl/Oy6tvt" target="_blank">Avada, X Theme, Salient, Oshine, KLEO, ShopKeeper, SimpleMag, Porto and many more (540+). Check out full list here.</a>, we have added extra features that allows you to assign the custom font to your theme using the theme options panel.
+
+= Can I assign font based on language ? =
+Ya, Our plugin allows you to assign font based on language. It currently supports WPML and Ploylang. If you are using some others multi lingual plugin, please do contact us and we will try to integrate with our plugin.
 
 = Where are my fonts stored ? =
 
@@ -112,6 +116,13 @@ No, our server is needed during font conversion only. After that all fonts are s
 1. Screenshot #6. Assign fonts to custom elements.
 
 == Changelog ==
+
+= 5.5 =
+* Assign font based on language for WPML & Polylang multi lingual plugins.
+
+= 5.4 =
+* Font upload supported upto 25 MB.
+* Use of woff2 compression for better and faster font loading.
 
 = 5.3 =
 * Fixed domain verification issue.

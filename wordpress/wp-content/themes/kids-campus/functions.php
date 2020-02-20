@@ -26,6 +26,9 @@ function kids_campus_setup() {
 	load_theme_textdomain( 'kids-campus', get_template_directory() . '/languages' );
 	add_theme_support( 'automatic-feed-links' );
 	add_theme_support('woocommerce');
+	add_theme_support( 'wc-product-gallery-zoom' );
+	add_theme_support( 'wc-product-gallery-lightbox' );
+	add_theme_support( 'wc-product-gallery-slider' );
 	add_theme_support('html5');
 	add_theme_support( 'post-thumbnails' );	
 	add_theme_support( 'title-tag' );	
@@ -227,3 +230,21 @@ require get_template_directory() . '/inc/customizer.php';
  * Load Jetpack compatibility file.
  */
 require get_template_directory() . '/inc/jetpack.php';
+
+/**
+ * Fix skip link focus in IE11.
+ *
+ * This does not enqueue the script because it is tiny and because it is only for IE11,
+ * thus it does not warrant having an entire dedicated blocking script being loaded.
+ *
+ * @link https://git.io/vWdr2
+ */
+function kids_campus_skip_link_focus_fix() {  
+	// The following is minified via `terser --compress --mangle -- js/skip-link-focus-fix.js`.
+	?>
+	<script>
+	/(trident|msie)/i.test(navigator.userAgent)&&document.getElementById&&window.addEventListener&&window.addEventListener("hashchange",function(){var t,e=location.hash.substring(1);/^[A-z0-9_-]+$/.test(e)&&(t=document.getElementById(e))&&(/^(?:a|select|input|button|textarea)$/i.test(t.tagName)||(t.tabIndex=-1),t.focus())},!1);
+	</script>
+	<?php
+}
+add_action( 'wp_print_footer_scripts', 'kids_campus_skip_link_focus_fix' );

@@ -1,9 +1,9 @@
 === Solid Construction ===
 Contributors: catchthemes
 Tags: two-columns, three-columns, left-sidebar, right-sidebar, grid-layout, flexible-header, custom-background, custom-colors, custom-header, custom-menu, custom-logo, editor-style, featured-image-header, featured-images, footer-widgets, full-width-template, rtl-language-support, sticky-post, theme-options, threaded-comments, translation-ready, blog, photography, e-commerce, portfolio
-Requires at least: 4.8
-Tested up to: 5.0.1
-Stable tag: 2.0
+Requires at least: 4.9
+Tested up to: 5.3
+Stable tag: 2.0.4
 License: GNU General Public License v3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -43,6 +43,20 @@ You can check our Theme Demo at https://catchthemes.com/demo/solid-construction/
 For more FAQs, visit https://catchthemes.com/frequently-asked-questions/
 
 == Changelog ==
+
+= 2.0.4 (Released: February 03, 2020) =
+* Bug Fixed: Breadcrumb issue with disabled on homepage
+
+= 2.0.3 (Released: January 15, 2020) =
+* Bug Fixed: h1 tag issue
+* Bug Fixed: Breadcrumb issue when there are no categories
+
+= 2.0.2 (Released: November 15, 2019) =
+* Bug Fixed: Multi Category Sanitization issue
+
+= 2.0.1 (Released: August 08, 2019) =
+* Added: Support for wp_body_open action
+* Bug Fixed: Added function_exists check for get_the_privacy_policy_link function usage
 
 = 2.0 (Released: December 19, 2018 ) =
 * Added: Theme support for block styles

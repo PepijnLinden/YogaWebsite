@@ -98,36 +98,36 @@ function solid_construction_sanitize_image( $image, $setting ) {
  * @since Solid Construction 1.0
  */
 function solid_construction_sanitize_category_list( $input ) {
-    if ( '' != $input ) {
-        if( in_array( 0, $input ) ) {
+    if ( is_array( $input ) && '' != $input ) {
+        if ( in_array( 0, $input ) ) {
             return '0';
         }
+
         $args = array(
-                        'type'          => 'post',
-                        'child_of'      => 0,
-                        'parent'        => '',
-                        'orderby'       => 'name',
-                        'order'         => 'ASC',
-                        'hide_empty'    => 0,
-                        'hierarchical'  => 0,
-                        'taxonomy'      => 'category',
-                    );
+            'type'         => 'post',
+            'child_of'     => 0,
+            'parent'       => '',
+            'orderby'      => 'name',
+            'order'        => 'ASC',
+            'hide_empty'   => 0,
+            'hierarchical' => 0,
+            'taxonomy'     => 'category',
+        );
 
-        $categories = ( get_categories( $args ) );
+        $categories = get_categories( $args );
 
-        $category_list  =   array();
+        $category_list  = array();
 
-        foreach ( $categories as $category )
-            $category_list  =   array_merge( $category_list, array( $category->term_id ) );
+        foreach ( $categories as $category ) {
+            $category_list  = array_merge( $category_list, array( $category->term_id ) );
+        }
 
         if ( count( array_intersect( $input, $category_list ) ) == count( $input ) ) {
             return $input;
-        }
-        else {
+        } else {
             return '';
         }
-    }
-    else {
+    } else {
         return '';
     }
 }

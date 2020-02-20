@@ -1,10 +1,8 @@
-			@font-face {
-				font-family: 'jaapokki-subtract';
-				font-style: normal;
-				src: url('/yogawebsite/wordpress/wp-content/uploads/useanyfont/190705034810Jaapokki-Subtract.eot');
-				src: local('jaapokki-subtract'), url('/yogawebsite/wordpress/wp-content/uploads/useanyfont/190705034810Jaapokki-Subtract.eot') format('embedded-opentype'), url('/yogawebsite/wordpress/wp-content/uploads/useanyfont/190705034810Jaapokki-Subtract.woff') format('woff');
-			}
-            
-            .et_gf_jaapokki-subtract{background:none !important;font-family:jaapokki-subtract;text-indent:0 !important;font-size:25px;}
-            
+				@font-face {
+					font-family: 'jaapokki-subtract';
+					src: url('/yogawebsite/wordpress/wp-content/uploads/useanyfont/190705034810Jaapokki-Subtract.woff') format('woff');
+				}
+
+				.et_gf_jaapokki-subtract{background:none !important;font-family:jaapokki-subtract;text-indent:0 !important;font-size:25px;}
+
 		

@@ -25,7 +25,7 @@ function kids_campus_the_attached_image() {
 	$attachment_ids = get_posts( array(
 		'post_parent'    => $post->post_parent,
 		'fields'         => 'ids',
-		'numberposts'    => -1,
+		'numberposts'    => '',
 		'post_status'    => 'inherit',
 		'post_type'      => 'attachment',
 		'post_mime_type' => 'image',

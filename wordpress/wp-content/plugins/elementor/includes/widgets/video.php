@@ -280,6 +280,17 @@ class Widget_Video extends Widget_Base {
 		);
 
 		$this->add_control(
+			'play_on_mobile',
+			[
+				'label' => __( 'Play on Mobile', 'elementor' ),
+				'type' => Controls_Manager::SWITCHER,
+				'condition' => [
+					'autoplay' => 'yes',
+				],
+			]
+		);
+
+		$this->add_control(
 			'mute',
 			[
 				'label' => __( 'Mute', 'elementor' ),
@@ -578,6 +589,7 @@ class Widget_Video extends Widget_Base {
 					'43' => '4:3',
 					'32' => '3:2',
 					'11' => '1:1',
+					'916' => '9:16',
 				],
 				'default' => '169',
 				'prefix_class' => 'elementor-aspect-ratio-',
@@ -718,7 +730,7 @@ class Widget_Video extends Widget_Base {
 				],
 				'range' => [
 					'%' => [
-						'min' => 50,
+						'min' => 30,
 					],
 				],
 				'selectors' => [
@@ -907,6 +919,10 @@ class Widget_Video extends Widget_Base {
 
 		if ( $settings['autoplay'] && ! $this->has_image_overlay() ) {
 			$params['autoplay'] = '1';
+
+			if ( $settings['play_on_mobile'] ) {
+				$params['playsinline'] = '1';
+			}
 		}
 
 		$params_dictionary = [];
